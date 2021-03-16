@@ -112,11 +112,13 @@ valida = as.matrix(valida.data[, -1])
 predictions = predict(object = model, newdata = valida)
 true = c(rep(1, 1000), rep(5, 1000), rep(6, 1000), rep(7, 1000))
 acuracia.valida = accuracy(y = true, yhat = predictions)
+print(acuracia.valida)
 
 # submission
 submission = cbind(valida.data[, 1], predictions)
 colnames(submission) = c('ImageId', 'Label')
-write.csv(submission, file = 'submission/svm-parcial.csv', row.names = FALSE)
+path = paste('submission/svm-parcial-', acuracia.valida, '.csv', sep = '')
+write.csv(submission, file = path, row.names = FALSE)
 
 # # true (?)
 # submission = cbind(valida.data[, 1], true)
