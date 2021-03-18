@@ -123,3 +123,13 @@ submission = cbind(valida.data[, 1], predictions)
 colnames(submission) = c('ImageId', 'Label')
 path = paste('submission/svm-pca-parcial-', acuracia.valida, '.csv', sep = '')
 write.csv(submission, file = path, row.names = FALSE)
+
+# por classe
+c1 = which(true == 1)  # um
+acuracia.c1 = accuracy(true[c1], predictions[c1])
+c2 = which(true == 5)  # cinco
+acuracia.c2 = accuracy(true[c2], predictions[c2])
+c3 = which(true == 6)  # seis
+acuracia.c3 = accuracy(true[c3], predictions[c3])
+c4 = which(true == 7)  # sete
+acuracia.c4 = accuracy(true[c4], predictions[c4])

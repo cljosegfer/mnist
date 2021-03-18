@@ -52,5 +52,3 @@ cum = cbind(cum.c1, cum.c2, cum.c3, cum.c4)
 # hist(label)
 barplot(cum, main = 'MNIST', xlab = 'Dígitos', 
         names.arg=c('1', '5', '6', '7'))
-
-
