@@ -29,7 +29,7 @@ cluster.3 = valida[2001:3000, ]
 cluster.4 = valida[3001:4000, ]
 
 # single
-i = 4205
+i = 11746
 amostra = matriz(as.matrix(data[i, -(1:2)]))
 MostraImagem(amostra, main = paste('Imagem ', i))
 
