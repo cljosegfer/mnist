@@ -109,7 +109,7 @@ print(report)
 # validacao
 valida.data = read.csv(file = 'dados/validacao.csv')
 valida = as.matrix(valida.data[, -1])
-predictions = predict(object = model, newdata = valida)
+predictions = predict(object = best, newdata = valida)
 true = c(rep(1, 1000), rep(5, 1000), rep(6, 1000), rep(7, 1000))
 acuracia.valida = accuracy(y = true, yhat = predictions)
 print(acuracia.valida)
