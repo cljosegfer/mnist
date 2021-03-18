@@ -28,10 +28,10 @@ cluster.2 = valida[1001:2000, ]
 cluster.3 = valida[2001:3000, ]
 cluster.4 = valida[3001:4000, ]
 
-# single
-i = 11746
-amostra = matriz(as.matrix(data[i, -(1:2)]))
-MostraImagem(amostra, main = paste('Imagem ', i))
+# # single
+# i = 11746
+# amostra = matriz(as.matrix(data[i, -(1:2)]))
+# MostraImagem(amostra, main = paste('Imagem ', i))
 
 # # varredura
 # N = 100
@@ -41,3 +41,16 @@ MostraImagem(amostra, main = paste('Imagem ', i))
 #   amostra = matriz(as.matrix(valida[i, -1]))
 #   MostraImagem(amostra, main = paste('imagem', i))
 # }
+
+# histograma
+label = as.matrix(data[, 2])
+cum.c1 = length(which(label == 1)) / length(label)
+cum.c2 = length(which(label == 5)) / length(label)
+cum.c3 = length(which(label == 6)) / length(label)
+cum.c4 = length(which(label == 7)) / length(label)
+cum = cbind(cum.c1, cum.c2, cum.c3, cum.c4)
+# hist(label)
+barplot(cum, main = 'MNIST', xlab = 'Dígitos', 
+        names.arg=c('1', '5', '6', '7'))
+
+
